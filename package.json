@@ -7,7 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
-  "keywords": ["Web-Scraping","nodejs","puppeteer"],
+  "keywords": [
+    "Web-Scraping",
+    "nodejs",
+    "puppeteer"
+  ],
   "author": "Kevin Manuel Ruiz Arteaga",
   "license": "ISC",
   "description": "Practica de web scraping utilizando node.js y puppeteer - Ejemplos Prácticos",
