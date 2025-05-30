@@ -1,0 +1,17 @@
+{
+  "name": "practica3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": ["Web-Scraping","nodejs","puppeteer"],
+  "author": "Kevin Manuel Ruiz Arteaga",
+  "license": "ISC",
+  "description": "Practica de web scraping utilizando node.js y puppeteer - Ejemplos Prácticos",
+  "dependencies": {
+    "puppeteer": "^24.9.0"
+  }
+}
