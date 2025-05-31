@@ -21,11 +21,10 @@ async function capturarScreen() {
         headless:false,
         slowMo:800
     });
-
     const pagina = await navegador.newPage();
     await pagina.goto('https://utsh.edu.mx/');
     await pagina.screenshot({
-        path:"./screenshoots/ejemplo.png",
+        path:`./screenshoots/ejemplo-${Date.now}.png`,
         fullPage:false
     })
     navegador.close();
@@ -58,4 +57,40 @@ async function navegarEntrePaginas(){
     console.log('::Termine')
 }
 
-navegarEntrePaginas()
+//navegarEntrePaginas()
+
+async function obtenerDatosAngular() {
+    //1.- Iniciar Navegador
+    console.log("Inicio de la funcion")
+    const navegador = await puppeteer.launch({
+        handless:false,
+        slowMo:500
+    })
+    //2.- Crear nueva pestaña em navegador
+    const pagina = await navegador.newPage()
+    //3.- Visitar la pagina
+
+    await pagina.goto('https://example.com/')
+    const datos = await pagina.evaluate(()=>{
+        const arregloResultados =[]
+        const titulo = document.querySelector('div>h1')?.innerText;
+        const parrafo = document.querySelector('div>p')?.innerText;
+        const textoEnlace = document.querySelector('div>p:nth-child(3')?.innerText;
+
+        const objetoResultado ={
+            titulo:titulo,
+            parrafo:parrafo,
+            enlace:{
+                textoEnlace:textoEnlace,
+            }
+        }
+
+        arregloResultados.push(objetoResultado)
+        return arregloResultados;
+    })
+    console.log('RESULTADOS', datos)
+    navegador.close()
+}
+
+//obtenerDatosAngular()
+
